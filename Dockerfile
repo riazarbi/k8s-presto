@@ -1,5 +1,7 @@
 FROM prestosql/presto:latest
 
+USER root
+
 RUN \
     set -xeu && \
     yum -y -q update && \
