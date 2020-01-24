@@ -33,6 +33,7 @@ ENV TEMPLATE_CATALOG_DIR ${TEMPLATE_DIR}/catalog
 ENV PATH $PATH:$PRESTO_HOME/bin
 
 RUN userdel presto && \
+    groupadd presto --gid 1000 && \
     useradd --uid 1000 --gid 1000 \
      --create-home \
      --home-dir ${PRESTO_HOME} \
