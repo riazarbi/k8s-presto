@@ -55,7 +55,6 @@ RUN userdel presto && \
  && mkdir -p ${PRESTO_DATA_DIR} \
  && cd ${PRESTO_HOME}/bin \
  #&& wget --quiet ${PRESTO_CLI_BIN} \
- /usr/bin/presto
  #&& mv presto-cli-${PRESTO_VERSION}-executable.jar presto \
  #&& chmod +x presto \
  && chown -R ${PRESTO_USER}:${PRESTO_USER} ${PRESTO_HOME}
