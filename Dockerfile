@@ -43,7 +43,7 @@ RUN userdel presto && \
  #&& wget --quiet $PRESTO_BIN \
  #&& tar xzf presto-server-${PRESTO_VERSION}.tar.gz \
  #&& rm -rf presto-server-${PRESTO_VERSION}.tar.gz \
- && mv /usr/lib/presto /* $PRESTO_HOME \
+ && mv /usr/lib/presto/* $PRESTO_HOME \
  #&& mv presto-server-${PRESTO_VERSION}/* $PRESTO_HOME \
  #&& rm -rf presto-server-${PRESTO_VERSION} \
  && mkdir -p ${PRESTO_CONFIGS_DIR} \
