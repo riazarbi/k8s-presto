@@ -15,6 +15,8 @@ RUN \
     yum -q clean all && \
     rm -rf /var/cache/yum && \
     rm -rf /tmp/* /var/tmp/* \
+ # god-awful hack
+ && rm -rf /usr/bin/python \
  && ln -s /usr/bin/python3 /usr/bin/python \
  && pip3 install \
       jinja2
