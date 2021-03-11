@@ -1,9 +1,9 @@
 FROM openjdk:8-jre-slim
 
-ARG PRESTO_VERSION="0.248"
-ARG MIRROR="https://repo1.maven.org/maven2/com/facebook/presto"
-ARG PRESTO_BIN="${MIRROR}/presto-server/${PRESTO_VERSION}/presto-server-${PRESTO_VERSION}.tar.gz"
-ARG PRESTO_CLI_BIN="${MIRROR}/presto-cli/${PRESTO_VERSION}/presto-cli-${PRESTO_VERSION}-executable.jar"
+ARG PRESTO_VERSION="353"
+ARG MIRROR="https://repo1.maven.org/maven2/io/trino"
+ARG PRESTO_BIN="${MIRROR}/trino-server/${PRESTO_VERSION}/trino-server-${PRESTO_VERSION}.tar.gz"
+ARG PRESTO_CLI_BIN="${MIRROR}/trino-cli/${PRESTO_VERSION}/trino-cli-${PRESTO_VERSION}-executable.jar"
 
 USER root
 
@@ -39,10 +39,10 @@ RUN useradd \
      $PRESTO_USER \
  && mkdir -p $PRESTO_HOME \
  && wget  $PRESTO_BIN \
- && tar xzf presto-server-${PRESTO_VERSION}.tar.gz \
- && rm -rf presto-server-${PRESTO_VERSION}.tar.gz \
- && mv presto-server-${PRESTO_VERSION}/* $PRESTO_HOME \
- && rm -rf presto-server-${PRESTO_VERSION} \
+ && tar xzf trino-server-${PRESTO_VERSION}.tar.gz \
+ && rm -rf trino-server-${PRESTO_VERSION}.tar.gz \
+ && mv trino-server-${PRESTO_VERSION}/* $PRESTO_HOME \
+ && rm -rf trino-server-${PRESTO_VERSION} \
  && mkdir -p ${PRESTO_CONFIGS_DIR} \
  && mkdir -p ${PRESTO_CATALOG_DIR} \
  && mkdir -p ${TEMPLATE_DIR} \
@@ -52,7 +52,7 @@ RUN useradd \
  && mkdir -p ${PRESTO_DATA_DIR} \
  && cd ${PRESTO_HOME}/bin \
  && wget  ${PRESTO_CLI_BIN} \
- && mv presto-cli-${PRESTO_VERSION}-executable.jar presto \
+ && mv trino-cli-${PRESTO_VERSION}-executable.jar presto \
  && chmod +x presto \
  && chown -R ${PRESTO_USER}:${PRESTO_USER} ${PRESTO_HOME}
 
