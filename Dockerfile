@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-slim
+FROM openjdk:11-jre-slim
 
 ARG PRESTO_VERSION="353"
 ARG MIRROR="https://repo1.maven.org/maven2/io/trino"
