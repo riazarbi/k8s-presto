@@ -6,7 +6,4 @@ http-server.log.path={{ data_root }}/http-request.log
 {%  endif %}
 http-server.http.port=8080
 discovery.uri=http://{{ discovery_uri }}:{{ discovery_port }}
-process_forwarded={{ "true" if process_forwarded else "false" }}
-{% if process_forwarded %}
-http-server.process-forwarded=true
-{% endif %}
+http-server.process-forwarded={{ "true" if process_forwarded else "false" }}
