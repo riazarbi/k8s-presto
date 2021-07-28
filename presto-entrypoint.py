@@ -177,8 +177,8 @@ def parse() -> dict:
     parser.add_argument('--discovery-port', default='80')
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--process-forwarded', action='store_true')
-    parser.add_argument('--auth-method, default='none')
-    parser.add_argument('--auth-paths, default='none')
+    parser.add_argument('--auth-method', default='none')
+    parser.add_argument('--auth-paths', default='none')
 
     # Include environment variables with specific prefixes so these can be
     # rendered into the template.
