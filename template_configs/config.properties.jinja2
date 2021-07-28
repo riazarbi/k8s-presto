@@ -6,10 +6,6 @@ http-server.authentication.type={{ auth_method }}
 node-scheduler.include-coordinator=false
 discovery-server.enabled=true
 http-server.log.path={{ data_root }}/http-request.log
-{% if auth_paths != 'none' %}
-password-authenticator.name=file
-file.password-file={{ auth_paths }}
-{%  endif %}
 {%  endif %}
 http-server.http.port=8080
 discovery.uri=http://{{ discovery_uri }}:{{ discovery_port }}
