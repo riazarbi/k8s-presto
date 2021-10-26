@@ -1,6 +1,6 @@
 FROM openjdk:11-jre-slim
 
-ARG PRESTO_VERSION="359"
+ARG PRESTO_VERSION="363"
 ARG MIRROR="https://repo1.maven.org/maven2/io/trino"
 ARG PRESTO_BIN="${MIRROR}/trino-server/${PRESTO_VERSION}/trino-server-${PRESTO_VERSION}.tar.gz"
 ARG PRESTO_CLI_BIN="${MIRROR}/trino-cli/${PRESTO_VERSION}/trino-cli-${PRESTO_VERSION}-executable.jar"
